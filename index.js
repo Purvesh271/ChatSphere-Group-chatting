@@ -25,6 +25,7 @@ app.set("view engine","ejs");
 const path = require("path");
 app.set("views", path.join(__dirname,"/views"));
 app.use(express.static(path.join(__dirname,"/public")));
+app.use(express.urlencoded({extended:true}));
 
 //port
 app.listen(8080,()=>{
@@ -43,6 +44,33 @@ app.get("/chats",async (req,res)=>{
     console.log(chats);
     res.render("index.ejs",{chats});
 });
+
+
+//new-create route
+app.get("/chats/new",(req,res)=>{
+    res.render("new.ejs");
+});
+
+app.post("/chats",(req,res)=>{
+    let {from , to, msg} =req.body;
+
+    //creating new chat
+    let newChat = new Chat({
+        from: from,
+        to: to,
+        msg: msg,
+        created_at: new Date(),
+    });
+    
+    //saving new chat
+    newChat.save().then((res)=>{
+        console.log("saved");
+    }).catch((err)=>{
+        console.log(err);
+    });
+
+    res.redirect("/chats");
+})
 
 
 

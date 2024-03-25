@@ -13,33 +13,16 @@
     
 </head>
 
-<body>
-    <div class="navbar">
-        <div class="logo">
-            <h1>ChatSphere</h1>
-        </div>
-        <h2>All Chats</h2>
-    </div>
-    <br><br><br>
-
-    <div class="chtroom">
-        <div class="boxes">      
-            <% for(let chat of chats){ %>
-                <div class="chat">
-                    <div class="sere">
-                        <p>From: <%= chat.from %></p>
-                        <p>To: <%= chat.to %></p>
-                    </div>
-                    <div class="msg">   
-                        <p>Message: <%= chat.msg %></p>
-                    </div>
-                </div>
-                <br>
-            <%}%>
-        </div>
-
-        <form method="get" action="/chats/new">
-            <button class="newcht"><i class="fa-solid fa-plus"></i> New Chat</button>
+<body >
+    <div class="newbox">
+        <h3 class="sere">New Chat</h3>
+        <form class="newfrm" method="post" action="/chats">
+            <div class="sr">
+                <input placeholder="Your Name: " name="from">
+                <input placeholder="Receiver Name: " name="to">
+            </div>
+            <textarea name="msg" placeholder="Write your message here.."></textarea>
+            <button>Send</button>
         </form>
     </div>
     
