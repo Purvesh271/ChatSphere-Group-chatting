@@ -24,7 +24,7 @@
     font-size: 2.5rem;
     background: linear-gradient(to right, red, blue);
     color: transparent;
-    -webkit-background-clip: text;
+    background-clip: text;
     text-shadow: 0 0 50px rgba(255, 0, 0, 0.457);
     animation: loglow 1s infinite alternate;
 }
@@ -38,7 +38,7 @@
     min-height: 5rem;
     max-height: fit-content;
     width: 22rem;
-    margin: 1rem;
+    margin: 1rem 0;
     margin-left: 3rem;
     border: 2px solid black;
     border-radius: 10px;
@@ -53,11 +53,14 @@
     gap: 1rem;
     margin-bottom: 0.5rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     border-bottom: 1px solid black;
     background-color:aquamarine ;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+.sere p{
+    margin-bottom: 0.25rem;
 }
 .msg {
     margin: 0.5rem;
@@ -73,6 +76,22 @@
     padding: 0.5rem;
     border-radius: 10px;
     font-size: 1rem;
+    font-weight: 600;
+}
+
+.date{
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.delete button{
+    right: 0;
+    margin-bottom: 0.25rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 

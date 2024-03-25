@@ -29,11 +29,21 @@
                     <div class="sere">
                         <p>From: <%= chat.from %></p>
                         <p>To: <%= chat.to %></p>
+                        <form class="delete" method="post" action="/chats/<%=chat._id%>?_method=DELETE">
+                            <button >Delete</button>
+                        </form>
                     </div>
                     <div class="msg">   
                         <p>Message: <%= chat.msg %></p>
                     </div>
+                    <div class="date">
+                        <p><%= chat.created_at.toString().split(" ")[0] %></p>
+                        <p><%= chat.created_at.toString().split(" ").slice(1,4).join("-") %></p>
+                        <p><%= chat.created_at.toString().split(" ")[4] %></p>
+                    </div>
+                    
                 </div>
+
                 <br>
             <%}%>
         </div>

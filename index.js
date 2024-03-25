@@ -3,6 +3,8 @@ const app = express();
 
 const mongoose = require('mongoose');
 
+const methodOverride = require("method-override");
+
 //databases
 const Chat = require('./models/chat.js');
 
@@ -26,6 +28,7 @@ const path = require("path");
 app.set("views", path.join(__dirname,"/views"));
 app.use(express.static(path.join(__dirname,"/public")));
 app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 //port
 app.listen(8080,()=>{
@@ -36,12 +39,10 @@ app.listen(8080,()=>{
 //index route 
 app.get("/",async (req,res)=>{
     let chats = await Chat.find();
-    console.log(chats);
     res.render("index.ejs",{chats});
 });
 app.get("/chats",async (req,res)=>{
     let chats = await Chat.find();
-    console.log(chats);
     res.render("index.ejs",{chats});
 });
 
@@ -71,6 +72,13 @@ app.post("/chats",(req,res)=>{
 
     res.redirect("/chats");
 })
+
+//delete route
+app.delete("/chats/:id",async (req,res)=>{
+    let {id} = req.params;
+    let dele = await Chat.findByIdAndDelete(id);
+    res.redirect("/chats");
+});
 
 
 
