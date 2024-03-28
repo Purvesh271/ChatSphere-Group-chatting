@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatSphere</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/public/logo.jpg">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2406/2406366.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
@@ -14,17 +14,37 @@
 </head>
 
 <body >
+    <div class="navbar">
+        <div class="logo">
+            <h1>ChatSphere</h1>
+        </div>
+    </div>
     <div class="newbox">
         <h3 class="sere">New Chat</h3>
-        <form class="newfrm" method="post" action="/chats">
+        <form class="newfrm" method="post" action="/chats" onsubmit="handleFormSubmission(event)">
             <div class="sr">
                 <input placeholder="Your Name: " name="from">
-                <input placeholder="Receiver Name: " name="to">
+                <input placeholder="Receiver Name: " name="to" id="to">
             </div>
             <textarea name="msg" placeholder="Write your message here.."></textarea>
             <button>Send</button>
         </form>
     </div>
+
+    <script>
+        function handleFormSubmission(event) {
+            event.preventDefault(); 
+
+            let toField = document.getElementById('to');
+            let toValue = toField.value.trim();
+    
+
+            if (toValue === '') {
+                toField.value = 'Everyone';
+            }
+            event.target.submit();
+        }
+    </script>
     
 </body>
 </html>

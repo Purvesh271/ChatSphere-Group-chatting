@@ -1,7 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: "Kalam", cursive;
+}
+body{
+    background-color:#d2cccc;
 }
 
 /*      INDEX.EJS STYLING        */
@@ -17,15 +19,18 @@
 }
 .navbar h2{
     text-decoration: underline;
-    margin-left: 30rem;  
+    margin-left: 28rem; 
+    font-family: "Open Sans", sans-serif; 
+    font-style: italic;
 }
 .logo h1{
+    font-family: "Open Sans", sans-serif;
     margin-left: 1rem;
     font-size: 2.5rem;
     background: linear-gradient(to right, red, blue);
     color: transparent;
     background-clip: text;
-    text-shadow: 0 0 50px rgba(255, 0, 0, 0.457);
+    text-shadow: 0 0 60px rgba(255, 0, 0, 0.457);
     animation: loglow 1s infinite alternate;
 }
 @keyframes loglow{
@@ -38,24 +43,25 @@
     min-height: 5rem;
     max-height: fit-content;
     width: 22rem;
-    margin: 1rem 0;
-    margin-left: 3rem;
+    margin: 1rem ;
+    margin-left: 5rem;
     border: 2px solid black;
     border-radius: 10px;
     background: #e0e0e0;
     box-shadow:  12px 12px 30px #bebebe,-12px -12px 30px #ffffff;
-    display: inline-block;  
+    display: inline-block;
+    font-family: "Kalam", cursive;  
 
 }
 
 .sere{
     display: flex;
     gap: 1rem;
-    margin-bottom: 0.5rem;
+    padding: 2px 0;
     align-items: center;
     justify-content: space-around;
     border-bottom: 1px solid black;
-    background-color:aquamarine ;
+    background-color:rgb(90, 239, 189) ;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -77,6 +83,7 @@
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
+    font-family: "Kalam", cursive;
 }
 
 .date{
@@ -89,10 +96,12 @@
 }
 .delete button{
     right: 0;
+    padding: 0.15rem;
     margin-bottom: 0.25rem;
     border-radius: 8px;
     font-size: 0.8rem;
     font-weight: 600;
+    font-family: "Kalam", cursive;
 }
 
 
@@ -103,7 +112,7 @@
     align-items: center;
     justify-content: center;
     min-height: 15rem;
-
+    font-family: "Kalam", cursive;
     width: 30rem;
     margin: 12% 0 10% 32%;
     border: 2px solid black;
@@ -122,16 +131,88 @@
 }
 input{
     padding: 3px;
+    font-family: "Kalam", cursive;
 }
 textarea{
     padding: 5px;
     min-height: 7rem;
     max-height: fit-content;
     width: 80%;
+    font-family: "Kalam", cursive;
 }
 .newfrm button{
+    font-family: "Kalam", cursive;
     padding: 0.5rem 1rem;
     border-radius: 10px;
     font-size: 0.8rem;
     font-weight: 600;
 }
+
+/*      RESPONSIVE STYLING        */
+@media only screen and (max-width: 800px) {
+    .navbar{
+        padding: 0.5rem;
+        width: 100vw;
+        gap: 2.7rem;
+        height: 3rem;
+    }
+    
+    .navbar h2{
+        margin-left: 0; 
+        font-size: 1.2rem;
+    }
+
+    .logo h1{
+        font-family: "Open Sans", sans-serif;
+        margin-left: 0.4rem;
+        font-size: 1.4rem;
+        background: linear-gradient(to right, red, blue);
+        color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.457);
+        animation: loglow 1s infinite alternate;
+    }
+    @keyframes loglow{
+        100%{
+            text-shadow: 0 0 8px rgba(21, 0, 255, 0.457);
+        }
+    }
+    
+
+    .chat {
+        width: 18rem;
+        margin: 1rem ;
+    }
+    .newcht{
+        margin: 0 ;
+        position: fixed;
+        bottom: 1.7rem;
+        padding: 0.5rem;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    .msg {
+        font-size: 1.1rem;
+    }
+
+    /* new chat box */
+    .newbox{
+        display: inline-block;
+        min-height: 15rem;
+        width: 24rem;
+        margin-top: 65%;
+        margin-left:1rem;
+        border-radius: 10px;
+    }
+    input{
+        padding: 7px;
+    }
+    textarea{
+        padding: 7px;
+        min-height: 7rem;
+        max-height: fit-content;
+        width: 84%;
+    }
+
+  }
