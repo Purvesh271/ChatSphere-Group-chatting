@@ -19,17 +19,21 @@
             <h1>ChatSphere</h1>
         </div>
     </div>
-    <div class="newbox">
-        <h3 class="sere">New Chat</h3>
-        <form class="newfrm" method="post" action="/chats" onsubmit="handleFormSubmission(event)">
-            <div class="sr">
-                <input placeholder="Your Name: " name="from">
-                <input placeholder="Receiver Name: " name="to" id="to">
-            </div>
-            <textarea name="msg" placeholder="Write your message here.."></textarea>
-            <button>Send</button>
-        </form>
+    <div class="n">
+        <div class="newbox">
+            <h3 class="sere">New Chat</h3>
+            <form class="newfrm" method="post" action="/chats" onsubmit="handleFormSubmission(event)">
+                <div class="sr">
+                    <input placeholder="Your Name: " name="from">
+                    <input placeholder="Receiver Name: " name="to" id="to">
+                </div>
+                <textarea name="msg" placeholder="Write your message here.."></textarea>
+                <button>Send</button>
+            </form>
+        </div>
+
     </div>
+
 
     <script>
         function handleFormSubmission(event) {
